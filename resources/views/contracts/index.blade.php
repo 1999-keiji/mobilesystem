@@ -4,16 +4,16 @@
 
 <div class="sidebar">
 <ul>
-    <li><a href="#"><img src="{{asset('/dashboard-icon.png')}}" alt="">　ダッシュボード</a></li>
-    <li class="active"><a href="/"><img src="{{asset('/sales-icon.png')}}" alt="">　販売管理</a></li>
-      <li class="active"><a href="/sale">　　・販売一覧</a></li>
-      <li class="active"><a href="/contract">　　・継続契約</a></li>
-      <li class="active"><a href="/sell">　　・販売登録</a></li>
-    <li><a href="/fix/new"><img src="{{asset('/fixes-icon.png')}}" alt="">　修理記録</a></li>
-    <li><a href="/stock"><img src="{{asset('/stocks-icon.png')}}" alt="">　在庫管理</a></li>
-    <li><a href="/supply/parts"><img src="{{asset('/parts-icon.png')}}" alt="">　部材仕入</a></li>
-    <li><a href="/proceeds"><img src="{{asset('/proceeds-icon.png')}}" alt="">　集計管理</a></li>
-    <li><a href="/shop"><img src="{{asset('/shops-icon.png')}}" alt="">　店舗情報</a></li>
+    <li><a href="{{asset('#')}}"><img src="{{asset('/dashboard-icon.png')}}" alt="">　ダッシュボード</a></li>
+    <li class="active"><a href="{{asset('/')}}"><img src="{{asset('/sales-icon.png')}}" alt="">　販売管理</a></li>
+      <li class="active"><a href="{{asset('/sale')}}">　　・販売一覧</a></li>
+      <li class="active"><a href="{{asset('/contract')}}">　　・継続契約</a></li>
+      <li class="active"><a href="{{asset('/sell')}}">　　・販売登録</a></li>
+    <li><a href="{{asset('/fix/new')}}"><img src="{{asset('/fixes-icon.png')}}" alt="">　修理記録</a></li>
+    <li><a href="{{asset('/stock')}}"><img src="{{asset('/stocks-icon.png')}}" alt="">　在庫管理</a></li>
+    <li><a href="{{asset('/supply/parts')}}"><img src="{{asset('/parts-icon.png')}}" alt="">　部材仕入</a></li>
+    <li><a href="{{asset('/proceeds')}}"><img src="{{asset('/proceeds-icon.png')}}" alt="">　集計管理</a></li>
+    <li><a href="{{asset('/shop')}}"><img src="{{asset('/shops-icon.png')}}" alt="">　店舗情報</a></li>
   </ul> 
 </div>
 <div class="main_content">
@@ -21,7 +21,7 @@
     <div class="main-box py-5">
       <div class="d-flex justify-content-between mb-2">
         <h3>継続契約一覧</h3>
-        <a href="/contract/new" class="d-block btn btn-primary">新規契約</a>
+        <a href="{{asset('/contract/new')}}" class="d-block btn btn-primary">新規契約</a>
       </div>
       <!-- 成功アラート -->
       <!-- <div class="alert alert-success d-flex align-items-center" role="alert">
@@ -48,17 +48,18 @@
           <tbody>
             @foreach($contracts as $c)
             <tr>
-              <td style="padding: 0;"><a href="/contract/{{$c[0]['id']}}" class="d-block">{{$c[0]['contract-date']}}</a></td>
-              <td style="padding: 0;"><a href="/contract/{{$c[0]['id']}}" class="d-block">
+              <td style="padding: 0;"><a href="{{asset('/contract/'.$c[0]['id'])}}" class="d-block">
+                {{$c[0]['contract-date']}}</a></td>
+              <td style="padding: 0;"><a href="{{asset('/contract/'.$c[0]['id'])}}" class="d-block">
                 @if($c[0]['status']==1)契約中
                 @elseif($c[0]['status']==0)解約済み
                 @endif
               </a></td>
-              <td style="padding: 0;"><a href="/contract/{{$c[0]['id']}}" class="d-block">{{$c[0]->customer->name}}</a></td>
-              <td style="padding: 0;"><a href="/contract/{{$c[0]['id']}}" class="d-block">{{$c[0]['plan-name']}} 等</a></td>
-              <td style="padding: 0;"><a href="/contract/{{$c[0]['id']}}" class="d-block">¥{{$c[0]->bill}}</a></td>
-              <td style="padding: 0;"><a href="/contract/{{$c[0]['id']}}" class="d-block">¥{{$c[0]->incentive}}</a></td>
-              <td style="padding: 0;"><a href="/contract/{{$c[0]['id']}}" class="d-block">{{$c[0]['confirmation-date']?? '---'}}</a></td>
+              <td style="padding: 0;"><a href="{{asset('/contract/'.$c[0]['id'])}}" class="d-block">{{$c[0]->customer->name}}</a></td>
+              <td style="padding: 0;"><a href="{{asset('/contract/'.$c[0]['id'])}}" class="d-block">{{$c[0]['plan-name']}} 等</a></td>
+              <td style="padding: 0;"><a href="{{asset('/contract/'.$c[0]['id'])}}" class="d-block">¥{{$c[0]->bill}}</a></td>
+              <td style="padding: 0;"><a href="{{asset('/contract/'.$c[0]['id'])}}" class="d-block">¥{{$c[0]->incentive}}</a></td>
+              <td style="padding: 0;"><a href="{{asset('/contract/'.$c[0]['id'])}}" class="d-block">{{$c[0]['confirmation-date']?? '---'}}</a></td>
               <!-- <td style="padding: 0;"><a href="/contract/{{$c[0]['id']}}" class="d-block">未確定</a></td> -->
             </tr>
             @endforeach

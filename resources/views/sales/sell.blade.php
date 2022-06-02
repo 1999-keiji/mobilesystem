@@ -4,16 +4,16 @@
 <link href="/css/selmodal.css" rel="stylesheet">
 <div class="sidebar">
   <ul>
-    <li><a href="#"><img src="{{asset('/dashboard-icon.png')}}" alt="">　ダッシュボード</a></li>
-    <li class="active"><a href="/"><img src="{{asset('/sales-icon.png')}}" alt="">　販売管理</a></li>
+    <li><a href="{{asset('#')}}"><img src="{{asset('/dashboard-icon.png')}}" alt="">　ダッシュボード</a></li>
+    <li class="active"><a href="{{asset('/')}}"><img src="{{asset('/sales-icon.png')}}" alt="">　販売管理</a></li>
       <li class="active"><a href="/sale">　　・販売一覧</a></li>
       <li class="active"><a href="/contract">　　・継続契約</a></li>
       <li class="active"><a href="/sell">　　・販売登録</a></li>
-    <li><a href="/fix/new"><img src="{{asset('/fixes-icon.png')}}" alt="">　修理管理</a></li>
-    <li><a href="/stock"><img src="{{asset('/stocks-icon.png')}}" alt="">　在庫管理</a></li>
-    <li><a href="/supply/parts"><img src="{{asset('/parts-icon.png')}}" alt="">　部材仕入</a></li>
-    <li><a href="/proceeds"><img src="{{asset('/proceeds-icon.png')}}" alt="">　集計管理</a></li>
-    <li><a href="/shop"><img src="{{asset('/shops-icon.png')}}" alt="">　店舗情報</a></li>
+    <li><a href="{{asset('/fix/new')}}"><img src="{{asset('/fixes-icon.png')}}" alt="">　修理管理</a></li>
+    <li><a href="{{asset('/stock')}}"><img src="{{asset('/stocks-icon.png')}}" alt="">　在庫管理</a></li>
+    <li><a href="{{asset('/supply/parts')}}"><img src="{{asset('/parts-icon.png')}}" alt="">　部材仕入</a></li>
+    <li><a href="{{asset('/proceeds')}}"><img src="{{asset('/proceeds-icon.png')}}" alt="">　集計管理</a></li>
+    <li><a href="{{asset('/shop')}}"><img src="{{asset('/shops-icon.png')}}" alt="">　店舗情報</a></li>
   </ul> 
 </div>
 <div class="main_content">
@@ -62,7 +62,7 @@
                 </option>
                 @endforeach
               </select>
-              <a href="/contract/new" class="text-end d-block text-primary">継続契約はこちら</a>
+              <a href="{{asset('/contract/new')}}" class="text-end d-block text-primary">継続契約はこちら</a>
             </div>
             <div class="col-5 form-group py-2"></div>
             <div class="form-group col-5 py-2">

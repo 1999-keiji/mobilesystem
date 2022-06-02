@@ -4,15 +4,15 @@
 
 <div class="sidebar">
   <ul>
-    <li class="active"><a href="#"><img src="{{asset('/dashboard-icon.png')}}" alt="">　ダッシュボード</a></li>
-    <li class="active"><a href="/sales/today"><img src="{{asset('/sales-icon.png')}}" alt="">　販売管理</a></li>
-      <li class="active"><a href="/">　　・記録一覧</a></li>
-      <li class="active"><a href="/sales">　　・販売登録</a></li>
-    <li><a href="/fix/new"><img src="{{asset('/fixes-icon.png')}}" alt="">　修理管理</a></li>
-    <li><a href="/stock"><img src="{{asset('/stocks-icon.png')}}" alt="">　在庫管理</a></li>
-    <li><a href="/supply/parts"><img src="{{asset('/parts-icon.png')}}" alt="">　部材管理</a></li>
-    <li><a href="/proceeds"><img src="{{asset('/proceeds-icon.png')}}" alt="">　売上管理</a></li>
-    <li><a href="/shop"><img src="{{asset('/shops-icon.png')}}" alt="">　店舗情報</a></li>
+    <li class="active"><a href="{{asset('/')}}"><img src="{{asset('/dashboard-icon.png')}}" alt="">　ダッシュボード</a></li>
+    <li class="active"><a href="{{asset('/sales/today')}}"><img src="{{asset('/sales-icon.png')}}" alt="">　販売管理</a></li>
+      <li class="active"><a href="{{asset('/')}}">　　・記録一覧</a></li>
+      <li class="active"><a href="{{asset('/sales')}}">　　・販売登録</a></li>
+    <li><a href="{{asset('/fix/new')}}"><img src="{{asset('/fixes-icon.png')}}" alt="">　修理管理</a></li>
+    <li><a href="{{asset('/stock')}}"><img src="{{asset('/stocks-icon.png')}}" alt="">　在庫管理</a></li>
+    <li><a href="{{asset('/supply/parts')}}"><img src="{{asset('/parts-icon.png')}}" alt="">　部材管理</a></li>
+    <li><a href="{{asset('/proceeds')"}}><img src="{{asset('/proceeds-icon.png')}}" alt="">　売上管理</a></li>
+    <li><a href="{{asset('/shop')}}"><img src="{{asset('/shops-icon.png')}}" alt="">　店舗情報</a></li>
   </ul> 
 </div>
 <div class="main_content">
