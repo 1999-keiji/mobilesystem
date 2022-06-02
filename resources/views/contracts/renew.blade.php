@@ -3,16 +3,16 @@
 @section('content')
 <div class="sidebar">
   <ul>
-    <li><a href="#"><img src="/dashboard-icon.png" alt="">　ダッシュボード</a></li>
-    <li class="active"><a href="/"><img src="/sales-icon.png" alt="">　販売管理</a></li>
+    <li><a href="#"><img src="{{asset('/dashboard-icon.png')}}" alt="">　ダッシュボード</a></li>
+    <li class="active"><a href="/"><img src="{{asset('/sales-icon.png')}}" alt="">　販売管理</a></li>
       <li class="active"><a href="/sale">　　・販売一覧</a></li>
       <li class="active"><a href="/contract">　　・継続契約</a></li>
       <li class="active"><a href="/sell">　　・販売登録</a></li>
-    <li><a href="/fix/new"><img src="/fixes-icon.png" alt="">　修理記録</a></li>
-    <li><a href="/stock"><img src="/stocks-icon.png" alt="">　在庫管理</a></li>
-    <li><a href="/supply/parts"><img src="/parts-icon.png" alt="">　部材仕入</a></li>
-    <li><a href="/proceeds"><img src="/proceeds-icon.png" alt="">　集計管理</a></li>
-    <li><a href="/shop"><img src="/shops-icon.png" alt="">　店舗情報</a></li>
+    <li><a href="/fix/new"><img src="{{asset('/fixes-icon.png')}}" alt="">　修理記録</a></li>
+    <li><a href="/stock"><img src="{{asset('/stocks-icon.png')}}" alt="">　在庫管理</a></li>
+    <li><a href="/supply/parts"><img src="{{asset('/parts-icon.png')}}" alt="">　部材仕入</a></li>
+    <li><a href="/proceeds"><img src="{{asset('/proceeds-icon.png')}}" alt="">　集計管理</a></li>
+    <li><a href="/shop"><img src="{{asset('/shops-icon.png')}}" alt="">　店舗情報</a></li>
   </ul> 
 </div>
 <div class="main_content">
@@ -84,15 +84,13 @@
             </div>
             <div class="form-group col-5 py-2">
               <label for="">登録担当者*</label>
-              @foreach($user as $u)
               <div class="">
-              <input type="hidden" value="" name="confirmation-user">
+                <input type="hidden" value="" name="confirmation-user">
+                @foreach($user as $u)
                 <input type="radio" value="{{$u['id']}}" name="confirmation-user" id="">
                 <span>{{$u['name']}}</span>
-                <input type="radio" value="{{$u['id']}}" name="confirmation-user" id="">
-                <span>{{$u['name']}}</span>
+                @endforeach
               </div>
-              @endforeach
             </div>
             <div class="form-group col-5 py-2">
               <label for="">備考</label>
